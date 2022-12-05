@@ -1,3 +1,5 @@
+# linux sudo apt-get install python3-tk
+
 from tkinter import *
 
 root = Tk()
