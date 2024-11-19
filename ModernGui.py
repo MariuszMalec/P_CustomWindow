@@ -10,6 +10,14 @@ root.geometry("500x350")
 def login():
     print("Login " + entry1.get())
 
+def print_button(text):
+    print("This button works: " + text)
+    if text == "on":
+        root.config(bg="gray1")
+    if text == "off":
+        root.config(bg="white")
+
+
 frame = customtkinter.CTkFrame(master=root)
 frame.pack(pady=20,padx=60,fill="both", expand=True)
 
@@ -27,5 +35,11 @@ button.pack(pady=12,padx=10)
 
 checkbox= customtkinter.CTkCheckBox(master=frame, text="remember me")
 checkbox.pack(pady=12,padx=10)
+
+varCheck = StringVar()
+varCheck.set(ON)
+checkboxMode = customtkinter.CTkCheckBox(master=frame, text="switch mode", onvalue="on",
+                       offvalue="off", variable=varCheck, command=lambda : print_button(varCheck.get()))
+checkboxMode.pack(pady=12,padx=10)
 
 root.mainloop()
