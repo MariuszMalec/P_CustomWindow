@@ -26,7 +26,10 @@ text = "with value set"
 
 def print_button(text):
     print("This button works: " + text)
-
+    if text == "on":
+        root.config(bg="#26242f")
+    if text == "off":
+        root.config(bg="white")
 
 myButton = Button(root, text="Button1", command=lambda : print_button(text), fg="blue", bg="green", activebackground="orange")
 myButton.grid(row=2, column=0)
@@ -46,7 +49,7 @@ print(entry.get())
 varCheck = StringVar()
 varCheck.set(ON)
 
-checkBox = Checkbutton(root, text="switch", onvalue="on",
+checkBox = Checkbutton(root, text="switch mode", onvalue="on",
                        offvalue="off", variable=varCheck, command=lambda : print_button(varCheck.get()))
 checkBox.grid(row=1, column=1)
 
@@ -77,6 +80,9 @@ sliderEntry.configure(state="readonly")
 
 ################RADIO##################
 #https://youtu.be/0zrq2N2qAVo?t=2573
+# Setting background color of
+# the window
+
 
 root.mainloop()
 
